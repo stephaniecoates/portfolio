@@ -1,11 +1,16 @@
+const dotenv = require('dotenv');
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Stephanie Coates`,
     social: {
-      twitter: `kylemathews`,
+      twitterURL: `stephcoates`,
+      instagramURL: `steph_coates`,
+      linkedinURL: `stephaniecoates`
     },
   },
   plugins: [
@@ -69,10 +74,13 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+        spaceId: `fz527jzbnxx3`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      }
     },
+    `@contentful/gatsby-transformer-contentful-richtext`,
+    `gatsby-plugin-styled-components`,
   ],
 }

@@ -17,15 +17,14 @@ function SEO({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
-            description
-            author
+            name
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.title
 
   return (
     <Helmet
