@@ -1,64 +1,50 @@
 import React from "react"
 import { Link } from "gatsby"
+import "./layout.css";
+import styled from 'styled-components'
+
+const Container = styled.div`
+margin: 40px;
+`
+
+const Logo = styled.h1`
+position: sticky;
+top: 30px;
+width: 100%;
+color: inherit;
+`
+
+const LogoLink = styled(Link)`
+text-decoration: none;
+color: black;   
+`
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-    console.log('ROOT PATH', rootPath)
-    if (location.pathname === rootPath) {
-      
-      header = (
-        <h1
-          style={{
-            // ...scale(1.5),
-            // marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+    const { children } = this.props
+    const header = (
+      <div>
+        <Logo>
+          <LogoLink to="/">
+            SC
+          </LogoLink>
+        </Logo>
+        <nav>
+          <input type="checkbox" className="menu-open" name="menu-open" id="menu-open"/>
+          <label className="menu-open-button" htmlFor="menu-open">
+            <span className="hamburger hamburger-1"></span>
+            <span className="hamburger hamburger-2"></span>
+            <span className="hamburger hamburger-3"></span>
+          </label>
+         <Link to="/blog" className="menu-item"> blog</Link>
+          <Link to="/contact" className="menu-item"> contact </Link>
+          <Link to="/projects" className="menu-item">projects </Link>
+          <Link to="/" className="menu-item">intro</Link>
+      </nav>
+      </div>
+    )
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          // maxWidth: rhythm(24),
-          // padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <Container>
         <header>{header}</header>
         <main>{children}</main>
         <footer>
@@ -66,7 +52,7 @@ class Layout extends React.Component {
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
+      </Container>
     )
   }
 }

@@ -2,7 +2,6 @@ import React, {Component} from "react"
 import { Link, graphql } from "gatsby"
 // import Img from 'gatsby-image';
 import styled from 'styled-components';
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -20,17 +19,17 @@ flex: 75%;
 `
 class BlogIndex extends Component {
   render() {
+    console.log(this.props)
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allContentfulPost.edges
-
     return (
       <Layout location={this.props.location} title={siteTitle}>
+      <h1>blog posts</h1>
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
         {posts.map(({ node }) => {
           const title = node.title || node.slug
           return (
@@ -43,7 +42,7 @@ class BlogIndex extends Component {
                   
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.slug}>
+                <Link style={{ boxShadow: `none` }} to={`/${node.slug}`}>
                   {title}
                 </Link>
               </h3>
@@ -71,7 +70,6 @@ export const pageQuery = graphql`
        node {
          title
          subtitle
-         
          author
          slug
        }

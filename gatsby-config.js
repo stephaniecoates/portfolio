@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config()
 }
+const {accessToken, spaceId} = process.env
 
 module.exports = {
   siteMetadata: {
@@ -14,13 +15,6 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -76,11 +70,17 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `fz527jzbnxx3`,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId,
+        accessToken
       }
     },
     `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: `src/utils/typography`
+      }
+    }
   ],
 }
