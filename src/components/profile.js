@@ -13,9 +13,10 @@ function Profile () {
             fixed={data.avatar.childImageSharp.fixed}
             alt={title}
             style={{
+              margin: '40px 0px 30px 0px',
               borderRadius: `50%`,
-              border: "2px solid black",
-              boxShadow: "-1px 2px grey"
+              border: "1px solid #5a6653",
+              boxShadow: "0 0 1px 10px rgba(138, 155, 127, 0.5), 0 0 1px 25px rgba(176, 191, 166, 0.4)"
             }}
           />
         )
@@ -28,7 +29,7 @@ const ProfileQuery = graphql`
   query ProfileQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 130, height: 130) {
+        fixed(width: 140, height: 140) {
           ...GatsbyImageSharpFixed
         }
       }

@@ -4,19 +4,24 @@ import "./layout.css";
 import styled from 'styled-components'
 
 const Container = styled.div`
-margin: 40px;
+background-color: #faf9f7;
+height: 100%;
 `
 
 const Logo = styled.h1`
-position: sticky;
-top: 30px;
-width: 100%;
-color: inherit;
+padding: 30px;
+margin: 0px;
+text-decoration: none;
 `
 
 const LogoLink = styled(Link)`
 text-decoration: none;
-color: black;   
+color: black; 
+letter-spacing: -8px;
+&:hover {
+  color: #8a9b7f;
+  text-decoration: none;
+}  
 `
 
 class Layout extends React.Component {
@@ -45,13 +50,13 @@ class Layout extends React.Component {
     )
     return (
       <Container>
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
+        <div>{header}</div>
+        <div>{children}</div>
+        <div>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </div>
       </Container>
     )
   }

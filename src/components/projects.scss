@@ -1,0 +1,49 @@
+.projects-container {
+  position: relative;
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: -40px;
+  letter-spacing: 3px;
+}
+
+.projects-container::before {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.projects-container::after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.projects-content-section {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.project-img {
+width: 100%;
+}
+
+[data-scroll] {
+  transition: opacity .5s linear;
+
+  .project-img {
+    display: block;
+    transform: scale(calc(0.8 + 0.2 * var(--visible-y)));
+  }
+}
+
+[data-scroll="out"] {
+  opacity: 0;
+}

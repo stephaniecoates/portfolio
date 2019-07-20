@@ -1,15 +1,129 @@
-import React from 'react';
-import Layout from './../components/layout'
-import Profile from './../components/profile'
+import React, { Component } from "react"
+import Layout from "./../components/layout"
+import Profile from "./../components/profile"
+import styled from "styled-components"
+import scrollToComponent from "react-scroll-to-component"
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Typed from "typed.js"
+import Projects from './../components/projects'
+import ScrollOut from 'scroll-out'
 
-export default function Intro (props) {
+const BioGridFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const BioGrid = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 1fr;
+`
+
+const Line1 = styled.p`
+  grid-row: 1;
+  grid-column: 1;
+  place-self: end start;
+  margin: 0px;
+`
+const Line2 = styled.h1`
+  grid-row: 2;
+  grid-column: 1;
+  font-size: 5.5em;
+  font-family: Satisfy;
+  margin: 40px 0px 20px 0px;
+  place-self: center start;
+  letter-spacing: -4px;
+`
+const Line3 = styled.p`
+  grid-row: 3;
+  grid-column: 1;
+  place-self: end end;
+  margin: 0px;
+`
+
+
+
+const options = {
+  strings: ["curious", "quirky", "spirited", "creative", "friendly", "driven", "resilient"],
+  typeSpeed: 150,
+  backSpeed: 75,
+  loop: true
+};
+export default class Intro extends Component {
+  constructor(props) {
+    super(props)
+    this.descriptionRef = React.createRef()
+  }
+  componentDidMount () {
+    this.typed = new Typed(this.el, options);
+    ScrollOut({
+      cssProps: {
+        visibleY: true,
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    // Make sure to destroy Typed instance on unmounting
+    // to prevent memory leaks
+    this.typed.destroy()
+  }
+
+  render() {
     return (
-        <Layout title={`SC`} location={props.location}>
-    <Profile />
-    <p>Hi! I'm</p>
-    <h1>Stephanie Coates</h1>
-    <p>I write code, obsess over Javascript, and blog about developer things.</p>
-        </Layout>
-        
+      <Layout title={`SC`} location={this.props.location}>
+        <BioGridFlex>
+          <Profile />
+          <BioGrid>
+            <Line1>Hi! I'm</Line1>
+            <Line2>Stephanie Coates</Line2>
+            <Line3>I write code, among other things.</Line3>
+          </BioGrid>
+        </BioGridFlex>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "80px",
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faChevronDown}
+            color="#d4d2cd"
+            style={{ cursor: "pointer" }}
+            size="2x"
+            onClick={() =>
+              scrollToComponent(this.descriptionRef.current, {
+                offset: 0,
+                align: "top",
+                duration: 1200,
+              })
+            }
+          />
+        </div>
+        <br />
+        <br />
+        <div ref={this.descriptionRef}/>
+        <div style={{margin: '140px 100px'}}> 
+        <span style={{marginRight: '17px', fontSize: '2em'}}>I'm a {" "}</span>
+        <span className="type-wrap" style={{position: 'absolute', fontFamily: 'Satisfy', fontWeight: 'bold', fontSize: '2.8em', marginTop: '-10px'}}>
+          <span
+            ref={(el) => { this.el = el; }}
+          />
+       </span>
+       <span style={{marginLeft: '180px', fontSize: '2em'}}> full stack developer based in Phoenix, Arizona. 
+       Currently, I build cool digital projects with an amazing team at <a href="www.americanexpress.com" style={{color: '#006fcf'}}>American Express</a>.
+       I'm available for <a href="/contact" style={{color: 'rgb(138, 155, 127)'}}>remote freelance work</a> as well.</span>
+      </div>
+      <br />
+        <br />
+        <Projects />
+      </Layout>
     )
+  }
 }

@@ -1,18 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
+
 nav {
   font-size: 16px;
 }
 
 .menu-item, .menu-open-button {
-  width: 80px;
+  width: 100px;
   height: 60px;
-  background-color: white;
+  background-color: #faf9f7;
   text-decoration: none;
   position: fixed;
-  top: 40px;
-  right: 40px;
+  top: 55px;
+  right: 60px;
   color: black;
   text-align: center;
   line-height: 65px;
+  z-index: 1;
+  border-radius: 5px;
 }
 
 .menu-open {
