@@ -31,7 +31,7 @@ class Layout extends React.Component {
       <div>
         <Logo>
           <LogoLink to="/">
-            SC
+            <div style={{fontFamily: 'Satisfy', fontWeight: 'bold'}}>SC</div>
           </LogoLink>
         </Logo>
         <nav>

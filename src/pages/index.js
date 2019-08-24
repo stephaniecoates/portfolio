@@ -116,9 +116,8 @@ export default class Intro extends Component {
             ref={(el) => { this.el = el; }}
           />
        </span>
-       <span style={{marginLeft: '180px', fontSize: '2em'}}> full stack developer based in Phoenix, Arizona. 
-       Currently, I build cool digital projects with an amazing team at <a href="www.americanexpress.com" style={{color: '#006fcf'}}>American Express</a>.
-       I'm available for <a href="/contact" style={{color: 'rgb(138, 155, 127)'}}>remote freelance work</a> as well.</span>
+       <span style={{marginLeft: '180px', fontSize: '2em'}}> full stack developer based in Tempe, Arizona. 
+       Currently, I work on cool digital projects with an amazing team at <a href="https://www.americanexpress.com" target="_blank" rel="noopener noreferrer" style={{color: '#006fcf'}}>American Express</a> and am available for <a href="/contact" style={{color: 'rgb(138, 155, 127)'}}>remote freelance work</a>.</span>
       </div>
       <br />
         <br />
