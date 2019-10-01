@@ -74,13 +74,7 @@ query ContentfulBlogPostBySlug($slug: String!) {
   }
   contentfulPost( slug: { eq: $slug }) {
     title
-    subtitle
-    author
-    image {
-      fluid {
-        ...GatsbyContentfulFluid
-      }
-    }
+    tags
     content {
       childContentfulRichText {
         html

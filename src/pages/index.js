@@ -8,6 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Typed from "typed.js"
 import Projects from './../components/projects'
 import ScrollOut from 'scroll-out'
+import Skills from './../components/Skills'
+import {Link} from 'gatsby'
+import Contact from './../components/Contact'
 
 const BioGridFlex = styled.div`
   display: flex;
@@ -108,21 +111,26 @@ export default class Intro extends Component {
         </div>
         <br />
         <br />
-        <div ref={this.descriptionRef}/>
-        <div style={{margin: '140px 100px'}}> 
+        <div id="about" ref={this.descriptionRef}/>
+        <div  style={{margin: '140px 140px 0px 140px'}}> 
         <span style={{marginRight: '17px', fontSize: '2em'}}>I'm a {" "}</span>
         <span className="type-wrap" style={{position: 'absolute', fontFamily: 'Satisfy', fontWeight: 'bold', fontSize: '2.8em', marginTop: '-10px'}}>
           <span
             ref={(el) => { this.el = el; }}
           />
        </span>
-       <span style={{marginLeft: '180px', fontSize: '2em'}}> full stack developer based in Tempe, Arizona. 
-       Currently, I work on cool digital projects with an amazing team at <a href="https://www.americanexpress.com" target="_blank" rel="noopener noreferrer" style={{color: '#006fcf'}}>American Express</a> and am available for <a href="/contact" style={{color: 'rgb(138, 155, 127)'}}>remote freelance work</a>.</span>
-      </div>
+       <span style={{marginLeft: '180px', marginBottom: '40px', fontSize: '1.7em'}}> full stack developer based in Tempe, Arizona. 
+       Currently, I work on cool digital projects at <a href="https://www.americanexpress.com" target="_blank" rel="noopener noreferrer" style={{color: '#006fcf'}}>American Express</a> and am available for <a href="/#contact" style={{color: '#8a9b7f'}}>remote freelance work</a>.</span>
+      <div style={{marginTop: '115px', fontSize: '1.7em'}}>
+      I spend my free time hiking, climbing, and <Link style={{color: '#8a9b7f'}} to="/blog">writing articles</Link> on programming. My hope is to make technical concepts <span style={{fontWeight: 'bold'}}>understandable</span> and <span style={{fontWeight: 'bold'}}>accessible</span> to everyone, and in turn, become a better developer myself.
+     </div> </div>
       <br />
         <br />
+        {/* <Skills /> */}
         <Projects />
+        <Contact />
       </Layout>
+      
     )
   }
 }

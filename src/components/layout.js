@@ -12,6 +12,7 @@ const Logo = styled.h1`
 padding: 30px;
 margin: 0px;
 text-decoration: none;
+width: 140px;
 `
 
 const LogoLink = styled(Link)`
@@ -42,9 +43,9 @@ class Layout extends React.Component {
             <span className="hamburger hamburger-3"></span>
           </label>
          <Link to="/blog" className="menu-item"> blog</Link>
-          <Link to="/contact" className="menu-item"> contact </Link>
-          <Link to="/projects" className="menu-item">projects </Link>
-          <Link to="/" className="menu-item">intro</Link>
+         <Link to="/#contact" className="menu-item"> contact</Link>
+         <Link to="/#projects" className="menu-item"> projects</Link>
+          <Link to="/#about" className="menu-item">about</Link>
       </nav>
       </div>
     )
@@ -53,7 +54,7 @@ class Layout extends React.Component {
         <div>{header}</div>
         <div>{children}</div>
         <div>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Built with &hearts; with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </div>
