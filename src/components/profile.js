@@ -7,16 +7,15 @@ function Profile () {
     <StaticQuery
       query={ProfileQuery}
       render={data => {
-        const { title } = data.site.siteMetadata
+        const { title, profileColor } = data.site.siteMetadata
         return (
           <Image
             fixed={data.avatar.childImageSharp.fixed}
             alt={title}
             style={{
-              margin: '40px 0px 30px 0px',
               borderRadius: `50%`,
-              border: "1px solid #5a6653",
-              boxShadow: "0 0 1px 10px rgba(138, 155, 127, 0.5), 0 0 1px 25px rgba(176, 191, 166, 0.4)"
+              border: `1px solid ${profileColor}`,
+              boxShadow: `0 0 1px 12px ${profileColor}66, 0 0 1px 24px ${profileColor}4D`
             }}
           />
         )
@@ -37,6 +36,7 @@ const ProfileQuery = graphql`
     site {
       siteMetadata {
         title
+        profileColor
       }
     }
   }

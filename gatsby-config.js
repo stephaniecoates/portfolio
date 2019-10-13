@@ -5,11 +5,12 @@ const { accessToken, spaceId } = process.env
 module.exports = {
   siteMetadata: {
     title: `Stephanie Coates`,
-    social: {
-      twitterURL: `stephcoates`,
-      instagramURL: `steph_coates`,
-      linkedinURL: `stephaniecoates`
-    },
+    font: `Georgia, Times New Roman`,
+    backgroundColor: `#faf9f7`,
+    titleColor: `#2B6F5D`,
+    navColor: `#D30C7B`,
+    profileColor: `#2B6F5D`,
+    footerColor: `#DBB4AD`
   },
   plugins: [
     {
@@ -72,11 +73,5 @@ module.exports = {
     },
     `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-plugin-styled-components`,
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: `src/utils/typography`
-      }
-    }
   ],
 }
