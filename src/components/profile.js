@@ -28,7 +28,7 @@ const ProfileQuery = graphql`
   query ProfileQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 140, height: 140) {
+        fixed(width: 120, height: 120) {
           ...GatsbyImageSharpFixed
         }
       }
