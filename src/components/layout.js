@@ -3,21 +3,6 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import HamburgerMenu from "react-hamburger-menu"
 import styled from "styled-components"
 
-// /* Extra small devices (phones, 600px and down) */
-// @media only screen and (max-width: 600px) {...}
-
-// /* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {...}
-
-// /* Medium devices (landscape tablets, 768px and up) */
-// @media only screen and (min-width: 768px) {...}
-
-// /* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {...}
-
-// /* Extra large devices (large laptops and desktops, 1200px and up) */
-// @media only screen and (min-width: 1200px) {...}
-
 const Container = styled.div`
   display: flex;
   box-sizing: border-box;
@@ -29,23 +14,30 @@ const Container = styled.div`
 `
 
 const LogoLink = styled(Link)`
-  font-size: 1.4em;
+  font-size: 1.5em;
   color: black;
   text-decoration: none;
+  padding: 30px;
   &:hover {
+    transition: 0.5s;
     color: ${props => props.color};
     text-decoration: none;
   }
+  @media only screen and (max-height: 760px) and (max-width: 400px) {
+    font-size: 1.2em;
+    padding: 15px;
+}
 `
 
 const MenuLink = styled(Link)`
   padding: 30px;
   text-decoration: none;
   letter-spacing: 1.2px;
+  font-size: 1.2em;
   color: black;
   &:hover {
+    transition: 0.5s;
     color: ${props => props.color};
-    font-weight: bold;
     text-decoration: none;
   }
 `
@@ -55,78 +47,79 @@ const ExternalMenuLink = styled.a`
   text-decoration: none;
   letter-spacing: 1.2px;
   color: black;
+  font-size: 1.2em;
   &:hover {
     color: ${props => props.color};
-    font-weight: bold;
+    transition: 0.5s;
     text-decoration: none;
   }
 `
 const OverlayMenuLink = styled(Link)`
-padding: ${props => props.top ? `70px 40px 40px 40px` : `40px`};
 text-decoration: none;
-font-size: 1.4em;
-  letter-spacing: 1.2px;
-  color: white;
+padding: ${props => props.top ? `50px 30px 30px 30px` : `30px`};
+font-size: 1em;
+letter-spacing: 1.2px;
+color: white;
+@media only screen and (min-height: 600px) {
+  padding: ${props => props.top ? `70px 40px 40px 40px` : `40px`};
+  font-size: 1.3em;
+}
 `
 
 const OverlayExternalMenuLink = styled.a`
+text-decoration: none;
+padding: ${props => props.top ? `50px 30px 30px 30px` : `30px`};
+font-size: 1em;
+letter-spacing: 1.2px;
+color: white;
+@media only screen and (min-height: 600px) {
   padding: ${props => props.top ? `70px 40px 40px 40px` : `40px`};
-  text-decoration: none;
-  font-size: 1.4em;
-  letter-spacing: 1.2px;
-  color: white;
+  font-size: 1.3em;
+}
 `
 
-const FooterLink = styled.a`
-  color: black;
-  text-decoration: none;
-  font-size: 0.9em;
-  padding: 0px 35px;
-  &:hover {
-    text-decoration: none;
-    font-weight: bold;
-  }
-`
 
 const HamburgerMenuContainer = styled.div`
-  display: none;
-
-  @media only screen and (max-width: 799px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 30px;
-    }
+display: none;
+@media only screen and (max-width: 799px) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+}
 `
 const OverlayHamburgerMenuContainer = styled.div`
-  display: none;
+display: none;
+padding-top: 10px;
+padding-right: 40px;
+@media only screen and (min-height: 760px) {
+  padding-top: 25px;
+}
 
-  @media only screen and (max-width: 799px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-top: 25px;
-    padding-right: 40px;
-    }
+@media only screen and (max-width: 799px) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 `
 
 const ExpandedMenuContainer = styled.div`
-  display: none;
+display: none;
 
-  @media only screen and (min-width: 800px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 30px;
-  }
+@media only screen and (min-width: 800px) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+}
 `
 
 const MobileNavOverlay = styled.div`
 @media only screen and (min-width: 800px) {
-	display: none;
+  display: none;
 }
 @media only screen and (max-width: 800px) {
-	position: fixed;
+  position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -139,7 +132,55 @@ const MobileNavOverlay = styled.div`
 }
 `
 
+const FooterLink = styled.a`
 
+color: black;
+text-decoration: none;
+font-size: 0.8em;
+&:hover {
+  text-decoration: none;
+  transition: 0.5s;
+  font-size: 1.03em;
+}
+@media only screen and (min-width: 400px) {
+  font-size: 1em;
+  padding: 0px 25px;
+}
+@media only screen and (min-width: 800px) {
+  padding: 0px 30px;
+}
+@media only screen and (min-width: 900px) {
+  padding: 0px 35px;
+  }
+`
+
+const InvisibleFooterBlock = styled.div`
+height: 6vh;
+`
+
+const FooterBackground = styled.div`
+display: flex;
+align-items: center;
+background-color: ${props => props.color};
+height: 7vh;
+position: fixed;
+bottom: 0;
+@media only screen and (max-width: 600px) {
+  width: 100vw;
+  justify-content: space-evenly;
+  border-radius: 10px 10px 0px 0px;
+}
+@media only screen and (min-width: 600px) {
+  width: 75vw;
+  justify-content: center;
+  border-radius: 10px 10px 0px 0px;
+}
+@media only screen and (min-width: 800px) {
+  width: 70vw;
+@media only screen and (min-width: 900px) {
+  width: 60vw;
+}
+`
 class Layout extends Component {
   state = {
     showMobileNav: false,
@@ -166,11 +207,9 @@ class Layout extends Component {
           const { children } = this.props
           const header = (
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <div style={{ padding: "30px" }}>
                 <LogoLink color={titleHoverColor} to="/">
                   {title}
                 </LogoLink>
-              </div>
               <HamburgerMenuContainer>
                 <HamburgerMenu
                   isOpen={this.state.showMobileNav}
@@ -216,21 +255,12 @@ class Layout extends Component {
           )
           const contactFooter = (
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ height: "6vh" }} />
-              <div
-                style={{
-                  width: "60vw",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: footerColor,
-                  borderRadius: "10px 10px 0px 0px",
-                  height: "7vh",
-                  position: "fixed",
-                  bottom: "0",
-                }}
+              <InvisibleFooterBlock />
+              <FooterBackground
+              color={footerColor}
               >
                 <FooterLink
+                  color={navHoverColor}
                   href="https://github.com/stephaniecoates"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -238,16 +268,19 @@ class Layout extends Component {
                   github
                 </FooterLink>
                 <FooterLink
+                  color={navHoverColor}
                   href="https://www.linkedin.com/in/stephanie-coates/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   linkedin
                 </FooterLink>
-                <FooterLink href="mailto:stcoates8@gmail.com">
+                <FooterLink
+                color={navHoverColor}
+                href="mailto:stcoates8@gmail.com">
                   stcoates8@gmail.com
                 </FooterLink>
-              </div>
+              </FooterBackground>
             </div>
           )
           return (

@@ -1,3 +1,7 @@
+// transform to color on hover on nav links
+// style bottom nav bar
+
+
 import React, { Component } from "react"
 import styled from "styled-components"
 import Typed from "typed.js"
@@ -20,12 +24,13 @@ const HomepageContainer = styled.div`
 `
 
 const TypedContainer = styled.div`
-  @media only screen and (max-width: 600px) {
-    font-size: 2.5em;
-    margin: 20px;
-  }
+margin: 20px;
+font-size: 1.5em;
+@media only screen and (min-height: 750px) {
+    font-size: 2em;
+}
 
-  @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) {
     font-size: 2.5em;
     align-self: flex-start;
     margin-left: 30px;
@@ -58,15 +63,17 @@ const AboutContainer = styled.div`
   }
 `
 const DescriptionContainer = styled.div`
-  @media only screen and (max-width: 600px) {
-    margin: 50px 20px 20px 20px;
-    font-size: 1.25em;
-    text-align: center;
+margin: 50px 20px 20px 20px;
+font-size: 0.9em;
+line-height: 1.3em;
+text-align: center;
+@media only screen and (min-height: 750px) {
+    font-size: 1.1em;
   }
-
   @media only screen and (min-width: 600px) {
     margin: 20px 20px 20px 40px;
     font-size: 1.3em;
+    line-height: 1.3em;
     width: 50%;
   }
 
@@ -77,7 +84,7 @@ const DescriptionContainer = styled.div`
 
   @media only screen and (min-width: 992px) {
     font-size: 1.5em;
-    margin: 20px 80px 20px 40px;
+    margin: 20px 80px 20px 50px;
   }
 `
 
