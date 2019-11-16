@@ -35,7 +35,7 @@ const About = () => {
       <PageContainer>
         <Header>about</Header>
         <Content>I'm curious and optimistic, a perpetual student and total soft-skill nerd.</Content>
-        <Content>I love change, spontaneity, and overcoming mental and physical challenges. That's why I love the tech field - it's constantly evolving and there's always something new to learn! Plus, with all the opportunities to use technology to positively impact the world, well, it knocks my socks off.</Content>
+        <Content>I feel fortunate to work in a field where work feels like play, and the opportinities to use technology to positively impact the world are incredible.</Content>
         <Content>Outside of tech, I love long backpacking trips, quality books and podcasts, and connecting with genuine people.</Content>
         <Subhead>tech I'm particularly interested in</Subhead>
         <ul>
