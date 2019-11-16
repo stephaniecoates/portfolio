@@ -16,6 +16,7 @@ const Header = styled.h1`
   display: flex;
   justify-content: flex-start;
   font-weight: bold;
+  margin-bottom: 40px;
 `
 
 const Content = styled.p`
@@ -34,7 +35,7 @@ margin: 0px auto;
 `
 const Subhead = styled.h3`
   font-weight: bold;
-  margin: 30px 0px 20px 0px;
+  margin: 50px 0px 20px 0px;
 `
 const PostLink = styled(Link)`
 padding: 10px 0px;
