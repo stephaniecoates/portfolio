@@ -14,8 +14,10 @@ const Header = styled.h1`
   display: flex;
   justify-content: flex-start;
   font-weight: bold;
+  margin-bottom: 40px;
 `
 const Subhead = styled.h3`
+margin-top: 50px;
   display: flex;
   justify-content: flex-start;
   font-weight: bold;
