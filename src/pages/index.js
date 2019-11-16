@@ -1,11 +1,11 @@
 import React from "react"
-import Loadable from "@loadable/component"
+import Layout from "./../components/layout"
+import Home from './../components/home';
 
-
-const ClientSideRenderedHomepage = Loadable(() => import('./../components/Homepage'))
-
-export default function Index () {
-    return (
-      <ClientSideRenderedHomepage />
+const Index = () => (
+      <Layout>
+        <Home />
+      </Layout>
     )
-}
+
+    export default Index
