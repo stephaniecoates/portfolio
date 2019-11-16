@@ -21,12 +21,10 @@ const Subhead = styled.h3`
   font-weight: bold;
 `
 const Content = styled.p`
-font-size: 1.1em;
-line-height: 1.8em;
+line-height: 1.5em;
 `
 const Bullet = styled.li`
-font-size: 1.1em;
-line-height: 1.8em;
+line-height: 1.5em;
 `
 
 const About = () => {
