@@ -42,18 +42,6 @@ const MenuLink = styled(Link)`
   }
 `
 
-const ExternalMenuLink = styled.a`
-  padding: 30px;
-  text-decoration: none;
-  letter-spacing: 1.2px;
-  color: black;
-  font-size: 1.2em;
-  &:hover {
-    color: ${props => props.color};
-    transition: 0.5s;
-    text-decoration: none;
-  }
-`
 const OverlayMenuLink = styled(Link)`
 text-decoration: none;
 padding: ${props => props.top ? `50px 30px 30px 30px` : `30px`};
@@ -65,19 +53,6 @@ color: white;
   font-size: 1.3em;
 }
 `
-
-const OverlayExternalMenuLink = styled.a`
-text-decoration: none;
-padding: ${props => props.top ? `50px 30px 30px 30px` : `30px`};
-font-size: 1em;
-letter-spacing: 1.2px;
-color: white;
-@media only screen and (min-height: 600px) {
-  padding: ${props => props.top ? `70px 40px 40px 40px` : `40px`};
-  font-size: 1.3em;
-}
-`
-
 
 const HamburgerMenuContainer = styled.div`
 display: none;
@@ -136,11 +111,10 @@ const FooterLink = styled.a`
 
 color: black;
 text-decoration: none;
-font-size: 0.8em;
 &:hover {
   text-decoration: none;
   transition: 0.5s;
-  font-size: 1.03em;
+  font-size: 1.05em;
 }
 @media only screen and (min-width: 400px) {
   font-size: 1em;
@@ -155,14 +129,18 @@ font-size: 0.8em;
 `
 
 const InvisibleFooterBlock = styled.div`
-height: 6vh;
+height: 8vh;
+background-color: white;
+width: 100vw;
+position: fixed;
+bottom: 0;
 `
 
 const FooterBackground = styled.div`
 display: flex;
 align-items: center;
-background-color: ${props => props.color};
-height: 7vh;
+border: 1px dashed black;
+height: 8vh;
 position: fixed;
 bottom: 0;
 @media only screen and (max-width: 600px) {
@@ -200,7 +178,6 @@ class Layout extends Component {
           const {
             titleHoverColor,
             navHoverColor,
-            footerColor,
             title,
             font,
           } = data.site.siteMetadata
@@ -232,20 +209,12 @@ class Layout extends Component {
                     paddingRight: "30px",
                   }}
                 >
-                  <MenuLink color={navHoverColor} to="/timeline">
-                    timeline
+                  <MenuLink color={navHoverColor} to="/">
+                    home
                   </MenuLink>
-                  <MenuLink color={navHoverColor} to="/projects">
-                    projects
+                  <MenuLink color={navHoverColor} to="/about">
+                    about
                   </MenuLink>
-                  <ExternalMenuLink
-                    color={navHoverColor}
-                    href="https://google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    resume
-                  </ExternalMenuLink>
                   <MenuLink color={navHoverColor} to="/blog">
                     blog
                   </MenuLink>
@@ -257,7 +226,6 @@ class Layout extends Component {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <InvisibleFooterBlock />
               <FooterBackground
-              color={footerColor}
               >
                 <FooterLink
                   color={navHoverColor}
@@ -286,7 +254,6 @@ class Layout extends Component {
           return (
             <div>
             <MobileNavOverlay open={this.state.showMobileNav}>
-            <div>MOBILE NAV</div>
             <OverlayHamburgerMenuContainer>
                 <HamburgerMenu
                   isOpen={this.state.showMobileNav}
@@ -308,25 +275,13 @@ class Layout extends Component {
                     alignItems: "center",
                   }}
                 >
-                  <OverlayMenuLink top onClick={() => this.handleClick()} color={navHoverColor} to="/">
+                  <OverlayMenuLink top onClick={() => this.handleClick()} to="/">
                     home
                   </OverlayMenuLink>
-                  <OverlayMenuLink onClick={() => this.handleClick()} color={navHoverColor} to="/timeline">
-                    timeline
+                  <OverlayMenuLink onClick={() => this.handleClick()} to="/about">
+                    about
                   </OverlayMenuLink>
-                  <OverlayMenuLink onClick={() => this.handleClick()} color={navHoverColor} to="/projects">
-                    projects
-                  </OverlayMenuLink>
-                  <OverlayExternalMenuLink
-                  onClick={() => this.handleClick()}
-                    color={navHoverColor}
-                    href="https://google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    resume
-                  </OverlayExternalMenuLink>
-                  <OverlayMenuLink onClick={() => this.handleClick()} color={navHoverColor} to="/blog">
+                  <OverlayMenuLink onClick={() => this.handleClick()} to="/blog">
                     blog
                   </OverlayMenuLink>
                 </div>            
@@ -354,7 +309,6 @@ const ColorQuery = graphql`
         font
         titleHoverColor
         navHoverColor
-        footerColor
       }
     }
   }

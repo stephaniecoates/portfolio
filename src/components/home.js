@@ -25,9 +25,9 @@ const HomepageContainer = styled.div`
 
 const TypedContainer = styled.div`
 margin: 20px;
-font-size: 1.5em;
-@media only screen and (min-height: 750px) {
-    font-size: 2em;
+font-size: 1.6em;
+@media only screen and (min-height: 700px) {
+    font-size: 2.5em;
 }
 
 @media only screen and (min-width: 600px) {
@@ -44,6 +44,10 @@ font-size: 1.5em;
   @media only screen and (min-width: 992px) {
     font-size: 3.5em;
     margin: 0px 80px;
+  }
+  @media only screen and (min-width: 1100px) {
+    font-size: 3.5em;
+    margin: 0px 150px;
   }
 `
 const AboutContainer = styled.div`
@@ -64,17 +68,18 @@ const AboutContainer = styled.div`
 `
 const DescriptionContainer = styled.div`
 margin: 50px 20px 20px 20px;
-font-size: 0.9em;
 line-height: 1.3em;
 text-align: center;
-@media only screen and (min-height: 750px) {
-    font-size: 1.1em;
+font-size: 0.9em;
+@media only screen and (min-height: 700px) {
+    font-size: 1.2em;
   }
   @media only screen and (min-width: 600px) {
     margin: 20px 20px 20px 40px;
     font-size: 1.3em;
     line-height: 1.3em;
     width: 50%;
+    text-align: left;
   }
 
   @media only screen and (min-width: 768px) {
@@ -85,6 +90,10 @@ text-align: center;
   @media only screen and (min-width: 992px) {
     font-size: 1.5em;
     margin: 20px 80px 20px 50px;
+  }
+  @media only screen and (min-width: 1100px) {
+    font-size: 1.5em;
+    margin: 20px 150px 20px 50px;
   }
 `
 
@@ -111,7 +120,7 @@ export default class Home extends Component {
         <AboutContainer>
           <Profile />
           <DescriptionContainer>
-            I'm a full stack developer living in Tempe, Arizona. Currently, I
+            I'm a software developer living in Tempe, Arizona. Currently, I
             work on cool digital projects at{" "}
             <a
               href="https://www.americanexpress.com"

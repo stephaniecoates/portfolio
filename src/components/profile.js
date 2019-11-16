@@ -15,7 +15,7 @@ function Profile () {
             style={{
               borderRadius: `50%`,
               border: `1px solid ${profileColor}`,
-              boxShadow: `0 0 1px 12px ${profileColor}66, 0 0 1px 24px ${profileColor}4D`
+              boxShadow: `0 0 1px 12px ${profileColor}99, 0 0 1px 24px ${profileColor}73`
             }}
           />
         )

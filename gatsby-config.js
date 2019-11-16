@@ -7,10 +7,9 @@ module.exports = {
     title: `Stephanie Coates`,
     font: `Georgia, Times New Roman`,
     backgroundColor: `#faf9f7`,
-    titleHoverColor: `#2B6F5D`,
-    navHoverColor: `#D30C7B`,
-    profileColor: `#2B6F5D`,
-    footerColor: `#DBB4AD`
+    titleHoverColor: `#82997E`,
+    navHoverColor: `#82997E`,
+    profileColor: `#82997E`,
   },
   plugins: [
     {
