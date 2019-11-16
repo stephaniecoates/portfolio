@@ -62,11 +62,7 @@ class BlogIndex extends Component {
         <PageContainer>
       <Header>blog</Header>
       <Content>
-        This is the manifestation of my efforts to learn in public. I enjoy writing about technical concepts at a high level - figuring out how stuff works under the hood, how all the moving pieces in technology function together. You'll find a lot of that here, as well as general posts about technology, programming, and JavaScript, and some personal development stuff sprinked in, too.
-         </Content>
-
-         <Content>
-        I write these posts with my 6-months-ago self in mind - it's mainly for my own growth and development. If someone stumbles upon this blog and gets something positive out of it, though, that would be extra sweet!
+        This is the sum of my efforts to learn in public. I enjoy writing about technical concepts at a high level - figuring out how stuff works under the hood, how all the moving pieces in technology function together, and explaning it in an accessible way so that people with varying levels technical knowledge understand. You'll find a lot of that here, as well as general posts about technology, programming, and JavaScript, and some personal development musings sprinkled in, too.
          </Content>
         <SEO
           title="All posts"
