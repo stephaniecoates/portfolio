@@ -289,7 +289,7 @@ class Layout extends Component {
             <div>
             <Container font={font}>
               <div>{header}</div>
-              <div>{children}</div>
+              <div style={{marginBottom: '7vh'}}>{children}</div>
               <div>{contactFooter}</div>
             </Container>
             </div>

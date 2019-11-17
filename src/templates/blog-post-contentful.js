@@ -1,63 +1,97 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
+import styled from 'styled-components'
+import moment from 'moment'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+const BackButton = styled(Link)`
+text-decoration: none;
+color: #82997E;
+width: 95%;
+margin: 10px auto 0px;
+display: flex;
+justify-content: flex-start;
+@media only screen and (min-width: 600px) {
+  width: 90%;
+}
+  @media only screen and (min-width: 800px) {
+    width: 85%;
+  @media only screen and (min-width: 900px) {
+    width: 75%;
+  }
+`
+const PageContainer = styled.div`
+width: 80%;
+margin: 30px auto;
+@media only screen and (min-width: 600px) {
+  width: 75%;
+}
+  @media only screen and (min-width: 800px) {
+    width: 70%;
+  @media only screen and (min-width: 900px) {
+    width: 60%;
+  }
+`
+
+const Date = styled.div`
+color: grey;
+font-size: 0.9em;`
+
+const Content = styled.p`
+line-height: 1.8em;
+font-size: 1.15em;
+`
+
+const NavContainer = styled.div`
+display: flex,
+flex-wrap: wrap,
+justify-content: space-between,
+padding: 0px,
+`
+
+const NavLink = styled.div`
+color: #82997E;
+margin: 5px;
+`
+
 class BlogPostContentfulTemplate extends Component {
   render() {
     const post = this.props.data.contentfulPost
-    const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout>
+        <BackButton to="/blog">
+        ← all posts
+        </BackButton>
+        <PageContainer>
         <SEO
           title={post.title}
-          description={post.subtitle}
         />
         <h1>{post.title}</h1>
-        <p
-          style={{
-            // ...scale(-1 / 5),
-            display: `block`,
-            // marginBottom: rhythm(1),
-            // marginTop: rhythm(-1),
-          }}
-        >
-          {post.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
-        <hr
-          style={{
-            // marginBottom: rhythm(1),
-          }}
-        />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
+        <Date>
+          published on {moment(post.date).format('MMMM Do, YYYY')}
+        </Date>
+        <Content dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
+        <hr/>
+        <NavContainer>
+          <NavLink>
             {previous && (
               <Link to={previous.slug} rel="prev">
                 ← {previous.title}
               </Link>
             )}
-          </li>
-          <li>
+          </NavLink>
+          <NavLink>
             {next && (
               <Link to={next.slug} rel="next">
                 {next.title} →
               </Link>
             )}
-          </li>
-        </ul>
+          </NavLink>
+        </NavContainer>
+        </PageContainer>
       </Layout>
     )
   }
@@ -67,13 +101,9 @@ export default BlogPostContentfulTemplate;
 
 export const pageQuery = graphql`
 query ContentfulBlogPostBySlug($slug: String!) {
-  site {
-    siteMetadata {
-      title
-    }
-  }
   contentfulPost( slug: { eq: $slug }) {
     title
+    date
     tags
     content {
       childContentfulRichText {
