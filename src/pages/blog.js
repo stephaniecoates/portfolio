@@ -7,7 +7,12 @@ import SEO from "../components/seo"
 const PageContainer = styled.div`
 width: 80%;
 margin: 30px auto;
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 600px) {
+  width: 75%;
+}
+  @media only screen and (min-width: 800px) {
+    width: 70%;
+  @media only screen and (min-width: 900px) {
     width: 60%;
   }
 `

@@ -1,11 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
+import { withPrefix } from 'gatsby'
 
 const PageContainer = styled.div`
 width: 80%;
 margin: 30px auto;
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 600px) {
+  width: 75%;
+}
+  @media only screen and (min-width: 800px) {
+    width: 70%;
+  @media only screen and (min-width: 900px) {
     width: 60%;
   }
 `
@@ -56,7 +62,7 @@ const About = () => {
             </a></Content>
         <Subhead>resume</Subhead>
         <Content>Check out my <a
-        href="https://www.github.com"
+              href={withPrefix('/resume.pdf')}
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#006fcf", textDecoration: "none" }}
