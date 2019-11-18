@@ -41,16 +41,8 @@ const About = () => {
       <PageContainer>
         <Header>about</Header>
         <Content>I'm curious and optimistic, a perpetual student and total soft-skill nerd.</Content>
-        <Content>I feel fortunate to work in a field where work feels like play, and the opportinities to use technology to positively impact the world are incredible.</Content>
+        <Content>I absolutely love being a software developer. I feel fortunate to work in a field where work feels like play, and where there are so many opportinities to use technology to positively impact the world.</Content>
         <Content>Outside of tech, I love long backpacking trips, quality books and podcasts, and connecting with genuine people.</Content>
-        <Subhead>tech I'm particularly interested in</Subhead>
-        <ul>
-        <Bullet>health tech: big data, analytics, AI/ML, wearables, diagnostic tools, software/hardware aiding people with disabilities (i.e. robotic prosthetics)</Bullet>
-        <Bullet>making food production/distribution more efficient and environmentally friendly</Bullet>
-        <Bullet>transportation and autonomous vehicles</Bullet>
-        <Bullet>virtual reality, augmented reality, and haptics</Bullet>
-        <Bullet>cybersecurity</Bullet>
-        </ul>
         <Subhead>projects</Subhead>
         <Content>Check out my latest projects on <a
               href="https://www.github.com"
@@ -70,12 +62,7 @@ const About = () => {
         <Subhead>recent accomplishments I'm proud of</Subhead>
         <Content>2015</Content>
         <ul>
-            <Bullet>helped lead a ten day whitewater rafting expedition on the Rogue River in Oregon</Bullet>
             <Bullet>solo thru-hiked the 165-mile Tahoe Rim Trail in Nevada/California</Bullet>
-        </ul>
-        <Content>2016</Content>
-        <ul>
-            <Bullet>helped lead a three week rafting/backpacking expedition in the canyons of southern Utah </Bullet>
         </ul>
         <Content>2017</Content>
         <ul>
