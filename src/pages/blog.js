@@ -43,6 +43,9 @@ const Subhead = styled.h3`
   margin: 50px 0px 20px 0px;
 `
 const PostLink = styled(Link)`
+display: flex;
+flex-direction: row;
+color: black;
 padding: 10px 0px;
 text-decoration: none;
 font-size: 1.1em;

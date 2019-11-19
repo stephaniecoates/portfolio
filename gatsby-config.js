@@ -5,7 +5,7 @@ const { accessToken, spaceId } = process.env
 module.exports = {
   siteMetadata: {
     title: `Stephanie Coates`,
-    font: `Georgia, Times New Roman`,
+    font: `Optima, Arial`,
     backgroundColor: `#faf9f7`,
     titleHoverColor: `#82997E`,
     navHoverColor: `#82997E`,
