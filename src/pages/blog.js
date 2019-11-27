@@ -70,7 +70,7 @@ class BlogIndex extends Component {
         <PageContainer>
       <Header>blog</Header>
       <Content>
-        This is the sum of my efforts to learn in public. I enjoy writing about technical concepts at a high level - understanding how things work under the hood and explaning them in an accessible way. You'll find a lot of that here, as well as general posts about technology, programming, and JavaScript, and some personal development stuff sprinkled in, too.
+        I love learning new things and leveling up as a developer. This is effort to do it in public.
          </Content>
         <SEO
           title="All posts"

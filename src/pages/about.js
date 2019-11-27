@@ -41,10 +41,10 @@ const About = () => {
       <PageContainer>
         <Header>about</Header>
         <Content>I'm curious and optimistic, a perpetual student and total soft-skill nerd.</Content>
-        <Content>I absolutely love being a software developer. I feel fortunate to work in a field where work feels like play, and where there are so many opportinities to use technology to positively impact the world.</Content>
-        <Content>Outside of tech, I love long backpacking trips, quality books and podcasts, and connecting with genuine people.</Content>
+        <Content>I love being a software developer. I feel fortunate to work in a field where work feels like play, and where there are so many opportinities to use technology to positively impact the world.</Content>
+        <Content>Programming is a huge passion of mine, but there's more to life than interacting with computers. Outside of tech, I love embarking on big outdoor expeditions, reading books, listening to podcasts, cooking, geeking out about nutrition and preventative medicine, and connecting with genuine people.</Content>
         <Subhead>projects</Subhead>
-        <Content>Check out my latest projects on <a
+        <Content>check out my latest projects on <a
               href="https://www.github.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -53,7 +53,7 @@ const About = () => {
               GitHub
             </a></Content>
         <Subhead>resume</Subhead>
-        <Content>Check out my <a
+        <Content>take a peek at my <a
               href={withPrefix('/resume.pdf')}
               target="_blank"
               rel="noopener noreferrer"
