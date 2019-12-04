@@ -60,7 +60,6 @@ font-size: 1.1em;
 }
 `
 
-
 class BlogIndex extends Component {
   render() {
     const { data } = this.props
@@ -70,7 +69,10 @@ class BlogIndex extends Component {
         <PageContainer>
       <Header>blog</Header>
       <Content>
-        I love learning new things and leveling up as a developer. This is effort to do it in public.
+        I love to learn new things and level up as a developer. This is my effort to do it <Link
+            style={{ color: "#006fcf", textDecoration: "none" }}
+            to='/learn-in-public'>in public
+            </Link>.
          </Content>
         <SEO
           title="All posts"
