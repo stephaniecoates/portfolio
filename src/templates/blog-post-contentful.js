@@ -73,7 +73,7 @@ class BlogPostContentfulTemplate extends Component {
         <Date>
           published on {moment(post.date).format('MMMM Do, YYYY')}
         </Date>
-        <Content dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
+        <Content dangerouslySetInnerHTML={{ __html: post.markdown.childMarkdownRemark.html }} />
         <hr/>
         <NavContainer>
           <NavLink>
@@ -105,8 +105,8 @@ query ContentfulBlogPostBySlug($slug: String!) {
     title
     date
     tags
-    content {
-      childContentfulRichText {
+    markdown {
+      childMarkdownRemark {
         html
       }
     }

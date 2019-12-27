@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import { withPrefix, Link } from "gatsby"
+import { withPrefix } from "gatsby"
 
 const PageContainer = styled.div`
 width: 80%;
@@ -45,21 +45,12 @@ const About = () => {
           nerd.
         </Content>
         <Content>
-          I love being a software developer. I feel fortunate to work in a field
+          I love building software. I feel fortunate to work in a field
           where work feels like play, and where there are so many opportinities
           to use technology to positively impact the world.
         </Content>
         <Content>
-          Outside of tech, I love embarking on big{" "}
-          <Link
-            to="/expeditions"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#006fcf", textDecoration: "none" }}
-          >
-            expeditions
-          </Link>
-          , reading books, listening to podcasts, cooking, and connecting with genuine
+          Outside of tech, I love traveling, exploring the outdoors, reading books, listening to podcasts, cooking healthy meals, and connecting with genuine
           people.
         </Content>
         <Subhead>projects</Subhead>
