@@ -1,111 +1,97 @@
-import React, {Component} from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from 'styled-components';
+import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const PageContainer = styled.div`
-width: 80%;
-margin: 30px auto;
-@media only screen and (min-width: 600px) {
-  width: 75%;
-}
-  @media only screen and (min-width: 800px) {
-    width: 70%;
-  @media only screen and (min-width: 900px) {
-    width: 60%;
-  }
+  max-width: 35em;
+  margin: 0px auto;
+  padding: 20px;
 `
 
 const Header = styled.h1`
-  display: flex;
-  justify-content: flex-start;
-  font-weight: bold;
+  margin-top: 60px;
   margin-bottom: 40px;
 `
 
-const Content = styled.p`
-line-height: 1.5em;
+const Description = styled.p`
+  line-height: 1.6em;
+`
+
+const Subhead = styled.p`
+  font-weight: bold;
+  margin: 30px 0px 20px 0px;
+  font-size: 1.2em;
 `
 
 const Posts = styled.div`
-width: 100%;
-margin: 0px auto;
-@media only screen and (min-width: 500px) {
-  width: 90%;
-}
-@media only screen and (min-width: 900px) {
-  width: 80%;
-}
-`
-const Subhead = styled.h3`
-  font-weight: bold;
-  margin: 50px 0px 20px 0px;
-`
-const PostLink = styled(Link)`
-display: flex;
-flex-direction: row;
-color: black;
-padding: 10px 0px;
-text-decoration: none;
-font-size: 1.1em;
-&:visited {
-  color: black;
-  text-decoration: none;
-}
-&:hover {
-  color: #82997E;
-  transition: 0.5s;
-  text-decoration: none;
-}
+  display: flex;
+  flex-direction: column;
 `
 
-class BlogIndex extends Component {
-  render() {
-    const { data } = this.props
-    const posts = data.allContentfulPost.edges
-    return (
-      <Layout>
-        <PageContainer>
+const InlineInternalLink = styled(Link)`
+  font-weight: bold;
+  color: black;
+`
+
+const PostLink = styled(Link)`
+  color: black;
+  padding: 10px 0px;
+  text-decoration: none;
+  &:visited {
+    color: black;
+    text-decoration: none;
+  }
+`
+const BlogIndex = ({ data }) => (
+  <Layout>
+    <PageContainer>
       <Header>blog</Header>
-      <Content>
-        I love to learn new things and level up as a developer. This is my effort to do it <Link
-            style={{ color: "#006fcf", textDecoration: "none" }}
-            to='/learn-in-public'>in public
-            </Link>.
-         </Content>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <Posts>
+      <Description>
+        I love to learn new things, understand systems, and grow as a developer.
+        This is my effort to do so{" "}
+        <InlineInternalLink to="/learn-in-public">in public</InlineInternalLink>
+        .
+      </Description>
+      <SEO
+        title="Software Development blog"
+        keywords={[
+          `blog`,
+          `software development`,
+          `software engineering`,
+          `javascript`,
+          `react`,
+        ]}
+        lang="en"
+        author="Stephanie Coates"
+      />
+      <Posts>
         <Subhead>all posts</Subhead>
-        {posts.map(({ node }) => {
+        {data.allContentfulPost.edges.map(({ node }) => {
           const title = node.title || node.slug
           return (
-                <PostLink key={node.slug} to={`/${node.slug}`}>
-                  {title}
-                </PostLink>
+            <PostLink key={node.slug} to={`/${node.slug}`}>
+              {title}
+            </PostLink>
           )
         })}
-        </Posts>
-        </PageContainer>
-      </Layout>
-    )
-  }
-}
+      </Posts>
+    </PageContainer>
+  </Layout>
+)
 
 export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-   allContentfulPost {
-     edges {
-       node {
-         title
-         slug
-       }
-     }
-   }
+    allContentfulPost {
+      edges {
+        node {
+          title
+          slug
+        }
+      }
+    }
   }
 `

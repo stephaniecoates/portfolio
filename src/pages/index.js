@@ -1,11 +1,11 @@
 import React from "react"
 import Layout from "./../components/layout"
-import Home from './../components/home';
+import About from "../components/about"
 
 const Index = () => (
-      <Layout>
-        <Home />
-      </Layout>
-    )
+  <Layout>
+    <About />
+  </Layout>
+)
 
-    export default Index
+export default Index

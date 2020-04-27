@@ -2,21 +2,16 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-function Profile () {
+function Profile() {
   return (
     <StaticQuery
-      query={ProfileQuery}
+      query={profileQuery}
       render={data => {
-        const { title, profileColor } = data.site.siteMetadata
         return (
           <Image
-            fixed={data.avatar.childImageSharp.fixed}
-            alt={title}
-            style={{
-              borderRadius: `50%`,
-              border: `1px solid ${profileColor}`,
-              boxShadow: `0 0 1px 12px ${profileColor}99, 0 0 1px 24px ${profileColor}73`
-            }}
+            style={{ borderRadius: "2px" }}
+            fixed={data.file.childImageSharp.fixed}
+            alt="profile picture"
           />
         )
       }}
@@ -24,19 +19,13 @@ function Profile () {
   )
 }
 
-const ProfileQuery = graphql`
-  query ProfileQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+export const profileQuery = graphql`
+  query {
+    file(relativePath: { regex: "/scportrait.jpeg/" }) {
       childImageSharp {
-        fixed(width: 120, height: 120) {
+        fixed(width: 350) {
           ...GatsbyImageSharpFixed
         }
-      }
-    }
-    site {
-      siteMetadata {
-        title
-        profileColor
       }
     }
   }
