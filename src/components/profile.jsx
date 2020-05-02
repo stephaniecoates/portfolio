@@ -1,15 +1,15 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 
 function Profile() {
   return (
     <StaticQuery
       query={profileQuery}
-      render={data => {
+      render={(data) => {
         return (
           <Image
-            style={{ borderRadius: "2px" }}
+            style={{ borderRadius: '2px' }}
             fixed={data.file.childImageSharp.fixed}
             alt="profile picture"
           />

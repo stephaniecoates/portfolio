@@ -1,7 +1,7 @@
-import React from "react"
-import Layout from "../components/layout"
-import styled from "styled-components"
-import { withPrefix } from "gatsby"
+import React from 'react'
+import Layout from '../components/layout'
+import styled from 'styled-components'
+import { withPrefix } from 'gatsby'
 
 const PageContainer = styled.div`
 width: 80%;
@@ -45,34 +45,35 @@ const About = () => {
           nerd.
         </Content>
         <Content>
-          I love building software. I feel fortunate to work in a field
-          where work feels like play, and where there are so many opportinities
-          to use technology to positively impact the world.
+          I love building software. I feel fortunate to work in a field where
+          work feels like play, and where there are so many opportinities to use
+          technology to positively impact the world.
         </Content>
         <Content>
-          Outside of tech, I love traveling, exploring the outdoors, reading books, listening to podcasts, cooking healthy meals, and connecting with genuine
-          people.
+          Outside of tech, I love traveling, exploring the outdoors, reading
+          books, listening to podcasts, cooking healthy meals, and connecting
+          with genuine people.
         </Content>
         <Subhead>projects</Subhead>
         <Content>
-          check out my latest projects on{" "}
+          check out my latest projects on{' '}
           <a
             href="https://www.github.com"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "#006fcf", textDecoration: "none" }}
+            style={{ color: '#006fcf', textDecoration: 'none' }}
           >
             GitHub
           </a>
         </Content>
         <Subhead>resume</Subhead>
         <Content>
-          take a peek at my{" "}
+          take a peek at my{' '}
           <a
-            href={withPrefix("/resume.pdf")}
+            href={withPrefix('/resume.pdf')}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "#006fcf", textDecoration: "none" }}
+            style={{ color: '#006fcf', textDecoration: 'none' }}
           >
             resume
           </a>
@@ -108,12 +109,12 @@ const About = () => {
             solo thru-hiked the 160-mile Collegiate Peaks Loop in Colorado
           </Bullet>
           <Bullet>
-            learned to code at{" "}
+            learned to code at{' '}
             <a
               href="https://www.devmountain.com"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#006fcf", textDecoration: "none" }}
+              style={{ color: '#006fcf', textDecoration: 'none' }}
             >
               DevMountain
             </a>
@@ -121,12 +122,12 @@ const About = () => {
         </ul>
         <Content>2019</Content>
         <Bullet>
-          launched my software career at{" "}
+          launched my software career at{' '}
           <a
             href="https://www.americanexpress.com"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "#006fcf", textDecoration: "none" }}
+            style={{ color: '#006fcf', textDecoration: 'none' }}
           >
             American Express
           </a>
@@ -134,18 +135,18 @@ const About = () => {
         <Subhead>contact</Subhead>
         <Content>
           If you've got questions, are interested in working together, or just
-          want to say hello, don't hesitate to reach out on{" "}
+          want to say hello, don't hesitate to reach out on{' '}
           <a
-            style={{ color: "#006fcf", textDecoration: "none" }}
+            style={{ color: '#006fcf', textDecoration: 'none' }}
             href="https://www.linkedin.com/in/stephanie-coates/"
             target="_blank"
             rel="noopener noreferrer"
           >
             linkedin
-          </a>{" "}
-          or via email at{" "}
+          </a>{' '}
+          or via email at{' '}
           <a
-            style={{ color: "#006fcf", textDecoration: "none" }}
+            style={{ color: '#006fcf', textDecoration: 'none' }}
             href="mailto:stcoates8@gmail.com"
           >
             stcoates8@gmail.com

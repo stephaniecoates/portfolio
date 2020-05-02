@@ -1,9 +1,9 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const PageContainer = styled.div`
   max-width: 40em;

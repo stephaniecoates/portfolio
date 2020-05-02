@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import Profile from "./profile"
-import Topo from "./topo.js"
-import { withPrefix } from "gatsby"
-import SEO from "./seo"
+import React from 'react'
+import styled from 'styled-components'
+import Profile from './profile'
+import Topo from './topo.js'
+import { withPrefix } from 'gatsby'
+import SEO from './seo'
 
 const TopoContainer = styled.div`
   max-height: 88vh;
@@ -114,7 +114,7 @@ const About = () => (
       <LeftIntro>Hey! I'm Steph.</LeftIntro>
       <TopAboutSection>
         I'm a software developer. I've got a knack for building beautiful,
-        high-quality digital experiences and absolutely{" "}
+        high-quality digital experiences and absolutely{' '}
         <BoldSpan>LOVE</BoldSpan> what I do. I'm passionate about solving
         problems and understanding complex systems - my goal is to do
         interesting things that matter.
@@ -125,7 +125,7 @@ const About = () => (
       </ProfileContainer>
       <AboutSection>
         My greatest strength is my never-ending desire to improve, both as a
-        human being and a developer. I believe in having a{" "}
+        human being and a developer. I believe in having a{' '}
         <InlineExternalLink
           target="_blank"
           href="https://www.youtube.com/watch?v=_X0mgOOSpLU&feature=emb_title"
@@ -133,7 +133,7 @@ const About = () => (
         >
           growth mindset
         </InlineExternalLink>
-        , replacing the belief <ItalicSpan>“I’m bad at X”</ItalicSpan> with{" "}
+        , replacing the belief <ItalicSpan>“I’m bad at X”</ItalicSpan> with{' '}
         <ItalicSpan>“I haven’t learned about X yet”</ItalicSpan>. I'm
         enthusiastic, equal parts collaborative and autonomous, and great at
         building rapport with others.
@@ -141,8 +141,8 @@ const About = () => (
       <AboutSection>
         I'm an incessantly curious person. I create because it's fun, constantly
         seek out new knowledge, and read <ItalicSpan>a lot</ItalicSpan>. I don't
-        like to sit still and have{" "}
-        <span style={{ textDecoration: "line-through" }}>dreams</span> plans to
+        like to sit still and have{' '}
+        <span style={{ textDecoration: 'line-through' }}>dreams</span> plans to
         live all over the globe - I like to expose myself to ways of thinking
         and living that challenge my current understanding of the world.
       </AboutSection>
@@ -197,7 +197,7 @@ const About = () => (
         </SocialLinkContainer>
         <SocialLinkContainer>
           <SocialLink
-            href={withPrefix("/StephanieCoatesResume.pdf")}
+            href={withPrefix('/StephanieCoatesResume.pdf')}
             target="_blank"
             rel="noopener noreferrer"
           >

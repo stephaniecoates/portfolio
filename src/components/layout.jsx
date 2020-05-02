@@ -1,6 +1,6 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 const PageContainer = styled.div`
   box-sizing: border-box;
@@ -65,7 +65,7 @@ const Header = () => (
 
 const Footer = () => (
   <FooterContainer>
-    Made with ♡ with{" "}
+    Made with ♡ with{' '}
     <InlineFooterLink
       target="_blank"
       rel="noopener noreferrer"
@@ -73,7 +73,7 @@ const Footer = () => (
     >
       Gatsby
     </InlineFooterLink>
-    ,{" "}
+    ,{' '}
     <InlineFooterLink
       target="_blank"
       rel="noopener noreferrer"
@@ -81,7 +81,7 @@ const Footer = () => (
     >
       GraphQL
     </InlineFooterLink>
-    , and{" "}
+    , and{' '}
     <InlineFooterLink
       target="_blank"
       rel="noopener noreferrer"
@@ -89,7 +89,7 @@ const Footer = () => (
     >
       Contentful
     </InlineFooterLink>
-    . Deployed on{" "}
+    . Deployed on{' '}
     <InlineFooterLink
       target="_blank"
       rel="noopener noreferrer"

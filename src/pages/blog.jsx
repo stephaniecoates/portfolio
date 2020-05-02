@@ -1,8 +1,8 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const PageContainer = styled.div`
   max-width: 35em;
@@ -64,7 +64,7 @@ const BlogIndex = ({ data }) => (
       <Header>blog</Header>
       <Description>
         I love to learn new things, understand systems, and grow as a developer.
-        This is my effort to do so{" "}
+        This is my effort to do so{' '}
         <InlineInternalLink to="/learn-in-public">in public</InlineInternalLink>
         .
       </Description>
