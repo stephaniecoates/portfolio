@@ -39,6 +39,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-manifest`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
@@ -47,7 +48,7 @@ module.exports = {
         accessToken,
       },
     },
-    `@contentful/gatsby-transformer-contentful-richtext`,
+
     `gatsby-plugin-styled-components`,
   ],
 }
