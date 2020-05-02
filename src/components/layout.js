@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const PageContainer = styled.div`
   box-sizing: border-box;
-  font-family: Optima, sans-serif;
+  font-family: Georgia, serif;
   width: 100%;
 `
 
@@ -18,6 +18,7 @@ const HeaderContainer = styled.div`
 const LogoLink = styled(Link)`
   text-decoration: none;
   color: black;
+  font-family: Optima, Avenir, sans-serif;
   font-size: 2em;
   margin: auto 0px;
   padding-left: 40px;
@@ -32,6 +33,7 @@ const MenuLinkContainer = styled.div`
 
 const MenuLink = styled(Link)`
   padding-right: 60px;
+  font-size: 1em;
   text-decoration: none;
   color: black;
 `

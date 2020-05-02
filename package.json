@@ -1,23 +1,13 @@
 {
   "name": "stephanie-coates-portfolio",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
+  "description": "My personal portfolio website",
+  "version": "2.0.0",
   "author": "Stephanie Coates <stcoates8@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
-    "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "@loadable/component": "^5.10.3",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.7.3",
     "gatsby-image": "^2.1.1",
-    "gatsby-plugin-feed": "^2.2.1",
-    "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -38,39 +28,29 @@
     "raf": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-hamburger-menu": "^1.1.1",
     "react-helmet": "^5.2.1",
-    "react-scroll-to-component": "^1.0.2",
-    "react-typography": "^0.16.19",
-    "scroll-out": "^2.2.7",
-    "styled-components": "^4.2.0",
-    "tween": "^0.9.0",
-    "typed.js": "^2.0.10",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.54",
-    "typography": "^0.16.19",
-    "typography-theme-sutro": "^0.16.19"
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "prettier": "^1.17.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "personal website",
+    "portfolio",
+    "contentful"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/stephaniecoates/portfolio.git"
   },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "sass": "sass --watch src/components/projects.scss:src/components/projects.css",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
   }
 }

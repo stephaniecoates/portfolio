@@ -1,5 +1,4 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -23,7 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog posts pages.
+    // Create blog posts pages
     const posts = result.data.allContentfulPost.edges
 
     posts.forEach((post, index) => {
@@ -44,4 +43,3 @@ exports.createPages = ({ graphql, actions }) => {
     return null
   })
 }
-

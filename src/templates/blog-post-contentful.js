@@ -1,115 +1,103 @@
-import React, { Component } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from 'styled-components'
-import moment from 'moment'
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BackButton = styled(Link)`
-text-decoration: none;
-color: #82997E;
-width: 95%;
-margin: 10px auto 0px;
-display: flex;
-justify-content: flex-start;
-@media only screen and (min-width: 600px) {
-  width: 90%;
-}
-  @media only screen and (min-width: 800px) {
-    width: 85%;
-  @media only screen and (min-width: 900px) {
-    width: 75%;
-  }
-`
 const PageContainer = styled.div`
-width: 80%;
-margin: 30px auto;
-@media only screen and (min-width: 600px) {
-  width: 75%;
-}
-  @media only screen and (min-width: 800px) {
-    width: 70%;
-  @media only screen and (min-width: 900px) {
-    width: 60%;
-  }
+  max-width: 40em;
+  margin: 60px auto;
+  padding: 0px 20px;
 `
 
-const Date = styled.div`
-color: grey;
-font-size: 0.9em;`
+const Title = styled.h1`
+  font-family: Optima, Avenir, sans-serif;
+`
+
+const Subhead = styled.div`
+  color: grey;
+  font-size: 0.9em;
+`
 
 const Content = styled.p`
-line-height: 1.8em;
-font-size: 1.15em;
+  line-height: 1.8em;
+  font-size: 1.1em;
 `
 
 const NavContainer = styled.div`
-display: flex,
-flex-wrap: wrap,
-justify-content: space-between,
-padding: 0px,
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
 `
 
-const NavLink = styled.div`
-color: #82997E;
-margin: 5px;
+const NavLinkLeft = styled(Link)`
+  color: black;
+  text-decoration: none;
+  width: 45%;
+`
+const NavLinkRight = styled(Link)`
+  color: black;
+  text-decoration: none;
+  width: 45%;
+  text-align: right;
 `
 
-class BlogPostContentfulTemplate extends Component {
-  render() {
-    const post = this.props.data.contentfulPost
-    const { previous, next } = this.props.pageContext
-    return (
-      <Layout>
-        <BackButton to="/blog">
-        ← all posts
-        </BackButton>
-        <PageContainer>
+const BlogPostContentfulTemplate = ({ data, pageContext }) => {
+  const { contentfulPost } = data
+  const { previous, next } = pageContext
+  return (
+    <Layout>
+      <PageContainer>
         <SEO
-          title={post.title}
+          title={contentfulPost.title}
+          keywords={[
+            `blog`,
+            `software development`,
+            `software engineering`,
+            `javascript`,
+            `react`,
+          ]}
+          lang="en"
+          author="Stephanie Coates"
         />
-        <h1>{post.title}</h1>
-        <Date>
-          published on {moment(post.date).format('MMMM Do, YYYY')}
-        </Date>
-        <Content dangerouslySetInnerHTML={{ __html: post.markdown.childMarkdownRemark.html }} />
-        <hr/>
+        <Title>{contentfulPost.title}</Title>
+        <Subhead>by Stephanie Coates</Subhead>
+        <Content
+          dangerouslySetInnerHTML={{
+            __html: contentfulPost.markdown.childMarkdownRemark.html,
+          }}
+        />
+        <hr />
         <NavContainer>
-          <NavLink>
-            {previous && (
-              <Link to={previous.slug} rel="prev">
-                ← {previous.title}
-              </Link>
-            )}
-          </NavLink>
-          <NavLink>
-            {next && (
-              <Link to={next.slug} rel="next">
-                {next.title} →
-              </Link>
-            )}
-          </NavLink>
+          {previous && (
+            <NavLinkLeft to={previous.slug} rel="prev">
+              ← {previous.title}
+            </NavLinkLeft>
+          )}
+          {next && (
+            <NavLinkRight to={next.slug} rel="next">
+              {next.title} →
+            </NavLinkRight>
+          )}
         </NavContainer>
-        </PageContainer>
-      </Layout>
-    )
-  }
+      </PageContainer>
+    </Layout>
+  )
 }
 
-export default BlogPostContentfulTemplate;
+export default BlogPostContentfulTemplate
 
 export const pageQuery = graphql`
-query ContentfulBlogPostBySlug($slug: String!) {
-  contentfulPost( slug: { eq: $slug }) {
-    title
-    date
-    tags
-    markdown {
-      childMarkdownRemark {
-        html
+  query ContentfulBlogPostBySlug($slug: String!) {
+    contentfulPost(slug: { eq: $slug }) {
+      title
+      tags
+      markdown {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }
-}
 `

@@ -12,6 +12,7 @@ const PageContainer = styled.div`
 
 const Header = styled.h1`
   margin-top: 60px;
+  font-family: Optima, Avenir, sans-serif;
   margin-bottom: 40px;
 `
 
@@ -21,8 +22,9 @@ const Description = styled.p`
 
 const Subhead = styled.p`
   font-weight: bold;
+  font-family: Optima, Avenir, sans-serif;
   margin: 30px 0px 20px 0px;
-  font-size: 1.2em;
+  font-size: 1.3em;
 `
 
 const Posts = styled.div`
@@ -46,6 +48,18 @@ const PostLink = styled(Link)`
 `
 const BlogIndex = ({ data }) => (
   <Layout>
+    <SEO
+      title="Blog"
+      keywords={[
+        `blog`,
+        `software development`,
+        `software engineering`,
+        `javascript`,
+        `react`,
+      ]}
+      lang="en"
+      author="Stephanie Coates"
+    />
     <PageContainer>
       <Header>blog</Header>
       <Description>
@@ -54,18 +68,6 @@ const BlogIndex = ({ data }) => (
         <InlineInternalLink to="/learn-in-public">in public</InlineInternalLink>
         .
       </Description>
-      <SEO
-        title="Software Development blog"
-        keywords={[
-          `blog`,
-          `software development`,
-          `software engineering`,
-          `javascript`,
-          `react`,
-        ]}
-        lang="en"
-        author="Stephanie Coates"
-      />
       <Posts>
         <Subhead>all posts</Subhead>
         {data.allContentfulPost.edges.map(({ node }) => {

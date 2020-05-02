@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import Profile from "./profile"
 import Topo from "./topo.js"
-import { Link, withPrefix } from "gatsby"
+import { withPrefix } from "gatsby"
+import SEO from "./seo"
 
 const TopoContainer = styled.div`
   max-height: 88vh;
@@ -16,12 +17,13 @@ const AboutContainer = styled.div`
 
 const LeftIntro = styled.h1`
   text-align: left;
-  font-size: 2em;
+  font-size: 2.5em;
+  font-family: Optima, Avenir, sans-serif;
   padding: 40px 20px 20px 20px;
 `
 
 const TopAboutSection = styled.div`
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.8em;
   margin: 20px;
   margin-right: 30%;
@@ -31,7 +33,7 @@ const TopAboutSection = styled.div`
 `
 
 const AboutSection = styled.p`
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.8em;
   margin: 20px;
   margin-left: 30%;
@@ -69,6 +71,7 @@ const SocialLinkContainer = styled.p`
 
 const SocialLink = styled.a`
   font-size: 2.2em;
+  font-family: Optima, Avenir, sans-serif;
   font-weight: bold;
   color: black;
   @media (max-width: 768px) {
@@ -77,11 +80,6 @@ const SocialLink = styled.a`
   @media (max-width: 411px) {
     font-size: 1.8em;
   }
-`
-
-const InlineInternalLink = styled(Link)`
-  font-weight: bold;
-  color: black;
 `
 
 const InlineExternalLink = styled.a`
@@ -97,33 +95,37 @@ const BoldSpan = styled.span`
 
 const About = () => (
   <React.Fragment>
+    <SEO
+      title="About"
+      keywords={[
+        `blog`,
+        `software development`,
+        `software engineering`,
+        `javascript`,
+        `react`,
+      ]}
+      lang="en"
+      author="Stephanie Coates"
+    />
     <TopoContainer>
       <Topo />
     </TopoContainer>
     <AboutContainer id="about">
       <LeftIntro>Hey! I'm Steph.</LeftIntro>
       <TopAboutSection>
-        By trade, I'm a software developer. I write code, build digital
-        products, and have an absolute blast doing so. Behind my success in
-        tech, however, is a variety of unique experiences that have shaped me
-        into the person I am today. I've fine-tuned my emotional intelligence as
-        a wilderness therapy guide, built up self-sufficiency and resilience on
-        long-distance solo backpacking trips, and rolled with unfamiliarity as a
-        foreign English teacher abroad. I pride myself on being an exceptional
-        leader, teammate, and developer, and there's much more than code
-        tutorials that got me here.
+        I'm a software developer. I've got a knack for building beautiful,
+        high-quality digital experiences and absolutely{" "}
+        <BoldSpan>LOVE</BoldSpan> what I do. I'm passionate about solving
+        problems and understanding complex systems - my goal is to do
+        interesting things that matter.
       </TopAboutSection>
+      <AboutSection></AboutSection>
       <ProfileContainer>
         <Profile />
       </ProfileContainer>
       <AboutSection>
-        I'm passionate about solving problems and understanding complex systems.
-        My goal is to do interesting things that matter.
-      </AboutSection>
-      <AboutSection>
-        While skills can be taught, character is inherent. My biggest strength
-        is my never-ending desire to improve, both as a human being and as an
-        engineer. I believe in having a{" "}
+        My greatest strength is my never-ending desire to improve, both as a
+        human being and a developer. I believe in having a{" "}
         <InlineExternalLink
           target="_blank"
           href="https://www.youtube.com/watch?v=_X0mgOOSpLU&feature=emb_title"
@@ -133,32 +135,28 @@ const About = () => (
         </InlineExternalLink>
         , replacing the belief <ItalicSpan>“I’m bad at X”</ItalicSpan> with{" "}
         <ItalicSpan>“I haven’t learned about X yet”</ItalicSpan>. I'm
-        optimistic, enthusiastic, equal parts collaborative and autonomous, and
-        skilled at building connections with others.
+        enthusiastic, equal parts collaborative and autonomous, and great at
+        building rapport with others.
       </AboutSection>
       <AboutSection>
-        I'm incessantly curious and <BoldSpan>LOVE</BoldSpan> learning new
-        things. (Ironically, this didn't happen until after I graduated from the
-        traditional education system.) Now, I build/create out of sheer
-        enjoyment, I read <ItalicSpan>a lot</ItalicSpan>, and I've got plans to
-        live all over the world. I like to experience ways of thinking and
-        living that stretch my mind and challenge my existing viewpoints.
+        I'm an incessantly curious person. I create because it's fun, constantly
+        seek out new knowledge, and read <ItalicSpan>a lot</ItalicSpan>. I don't
+        like to sit still and have{" "}
+        <span style={{ textDecoration: "line-through" }}>dreams</span> plans to
+        live all over the globe - I like to expose myself to ways of thinking
+        and living that challenge my current understanding of the world.
       </AboutSection>
       <AboutSection>
-        Materialistically, I value simplicity. I don’t like the feeling of
-        having more than I need. This applies to tech, too: I write code that's
-        clean, maintainable, and performant. I avoid spaghetti code that{" "}
-        <ItalicSpan>"works, but I don't know why"</ItalicSpan> and always strive
-        to understand exactly what's happening in my program. Exploring what
-        happens under the hood is the central idea behind most{" "}
-        <InlineInternalLink to="/blog">articles</InlineInternalLink> I write.
+        I believe in an interdisciplinary approach to life and work. Before
+        learning to code, I worked as a wilderness therapy guide in Colorado and
+        a foreign English teacher in Thailand. These experiences instilled in me
+        skills like resilience, self-sufficiency, communication, and discipline,
+        all which have shaped me into the exceptional leader, teammate, and
+        developer I am today.
       </AboutSection>
       <AboutSection>
-        I’m deliberate with how I structure my life. I don't believe in being
-        complacent, or doing things that feel lukewarm. I'm picky about the
-        people, situations, and projects I engage with, and when I find the ones
-        that are a resounding <ItalicSpan>HELL YEAH</ItalicSpan>, I give them my
-        undivided attention and commitment.
+        I'm also a hardcore outdoor adventure enthusiast, health nerd, amateur
+        chef, serial optimist, and ridiculously friendly people person.
       </AboutSection>
       <AboutSection>
         If you'd like to connect, feel free to get in touch through email,
