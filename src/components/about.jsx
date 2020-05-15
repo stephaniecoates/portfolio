@@ -1,17 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import Profile from './profile'
-import Topo from './topo.js'
 import { withPrefix } from 'gatsby'
 import SEO from './seo'
 
-const TopoContainer = styled.div`
-  max-height: 88vh;
-  overflow: hidden;
-`
-
 const AboutContainer = styled.div`
-  max-width: 55em;
+  max-width: 45em;
   margin: 0px auto;
 `
 
@@ -23,7 +17,7 @@ const LeftIntro = styled.h1`
 `
 
 const TopAboutSection = styled.div`
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.8em;
   margin: 20px;
   margin-right: 30%;
@@ -33,7 +27,7 @@ const TopAboutSection = styled.div`
 `
 
 const AboutSection = styled.p`
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.8em;
   margin: 20px;
   margin-left: 30%;
@@ -100,14 +94,11 @@ const About = () => (
       lang="en"
       author="Stephanie Coates"
     />
-    <TopoContainer>
-      <Topo />
-    </TopoContainer>
-    <AboutContainer id="about">
+    <AboutContainer>
       <LeftIntro>Hi! I'm Steph.</LeftIntro>
       <TopAboutSection>
         I'm a software developer. I've got a knack for building beautiful,
-        high-quality digital experiences and love what I do. I'm passionate
+        high-quality digital experiences and I love what I do. I'm passionate
         about solving problems and understanding complex systems - my goal is do
         interesting things that matter.
       </TopAboutSection>

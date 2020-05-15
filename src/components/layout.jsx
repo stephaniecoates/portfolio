@@ -57,7 +57,7 @@ const Header = () => (
   <HeaderContainer>
     <LogoLink to="/">SC</LogoLink>
     <MenuLinkContainer>
-      <MenuLink to="/#about">about</MenuLink>
+      <MenuLink to="/">about</MenuLink>
       <MenuLink to="/blog">blog</MenuLink>
     </MenuLinkContainer>
   </HeaderContainer>

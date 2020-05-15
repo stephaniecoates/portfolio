@@ -48,15 +48,6 @@ const PostLink = styled(Link)`
 `
 const BlogIndex = ({ data }) => {
   let posts = data.allContentfulPost.edges
-  // .map(({ node }) => {
-  //   const sanitizedDatePost = {
-  //     node: {
-  //       ...node,
-  //       date: node.date ? node.date.slice(0, 10).replace(/-/g, '') : '0',
-  //     },
-  //   }
-  //   return sanitizedDatePost
-  // })
   return (
     <Layout>
       <SEO
