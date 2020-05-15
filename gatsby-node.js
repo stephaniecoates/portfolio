@@ -3,7 +3,7 @@ const path = require(`path`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post-contentful.js`)
+  const blogPost = path.resolve(`./src/templates/blog-post-contentful.jsx`)
   return graphql(
     `
       {
@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `
-  ).then(result => {
+  ).then((result) => {
     if (result.errors) {
       throw result.errors
     }

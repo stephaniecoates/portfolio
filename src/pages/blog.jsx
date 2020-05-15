@@ -46,52 +46,72 @@ const PostLink = styled(Link)`
     text-decoration: none;
   }
 `
-const BlogIndex = ({ data }) => (
-  <Layout>
-    <SEO
-      title="Blog"
-      keywords={[
-        `blog`,
-        `software development`,
-        `software engineering`,
-        `javascript`,
-        `react`,
-      ]}
-      lang="en"
-      author="Stephanie Coates"
-    />
-    <PageContainer>
-      <Header>blog</Header>
-      <Description>
-        I love to learn new things, understand systems, and grow as a developer.
-        This is my effort to do so{' '}
-        <InlineInternalLink to="/learn-in-public">in public</InlineInternalLink>
-        .
-      </Description>
-      <Posts>
-        <Subhead>all posts</Subhead>
-        {data.allContentfulPost.edges.map(({ node }) => {
-          const title = node.title || node.slug
-          return (
-            <PostLink key={node.slug} to={`/${node.slug}`}>
-              {title}
-            </PostLink>
-          )
-        })}
-      </Posts>
-    </PageContainer>
-  </Layout>
-)
+const BlogIndex = ({ data }) => {
+  let posts = data.allContentfulPost.edges
+  // .map(({ node }) => {
+  //   const sanitizedDatePost = {
+  //     node: {
+  //       ...node,
+  //       date: node.date ? node.date.slice(0, 10).replace(/-/g, '') : '0',
+  //     },
+  //   }
+  //   return sanitizedDatePost
+  // })
+  return (
+    <Layout>
+      <SEO
+        title="Blog"
+        keywords={[
+          `blog`,
+          `software development`,
+          `software engineering`,
+          `javascript`,
+          `react`,
+        ]}
+        lang="en"
+        author="Stephanie Coates"
+      />
+      <PageContainer>
+        <Header>blog</Header>
+        <Description>
+          I love to learn new things, understand systems, and grow as a
+          developer. This is my effort to do so{' '}
+          <InlineInternalLink to="/learn-in-public">
+            in public
+          </InlineInternalLink>
+          .
+        </Description>
+        <Posts>
+          <Subhead>all posts</Subhead>
+          {posts
+            // .sort((a, b) => {
+            //   return parseInt(a.node.date) - parseInt(b.node.date)
+            // })
+            // .reverse()
+            .map(({ node }) => {
+              const title = node.title || node.slug
+              return (
+                <PostLink key={node.slug} to={`/${node.slug}`}>
+                  {title}
+                </PostLink>
+              )
+            })}
+        </Posts>
+      </PageContainer>
+    </Layout>
+  )
+}
 
 export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-    allContentfulPost {
+    allContentfulPost(sort: { fields: date }) {
       edges {
         node {
           title
           slug
+          date
         }
       }
     }

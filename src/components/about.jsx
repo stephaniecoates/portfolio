@@ -82,15 +82,8 @@ const SocialLink = styled.a`
   }
 `
 
-const InlineExternalLink = styled.a`
-  font-weight: bold;
-  color: black;
-`
 const ItalicSpan = styled.span`
   font-style: italic;
-`
-const BoldSpan = styled.span`
-  font-weight: bold;
 `
 
 const About = () => (
@@ -111,12 +104,11 @@ const About = () => (
       <Topo />
     </TopoContainer>
     <AboutContainer id="about">
-      <LeftIntro>Hey! I'm Steph.</LeftIntro>
+      <LeftIntro>Hi! I'm Steph.</LeftIntro>
       <TopAboutSection>
         I'm a software developer. I've got a knack for building beautiful,
-        high-quality digital experiences and absolutely{' '}
-        <BoldSpan>LOVE</BoldSpan> what I do. I'm passionate about solving
-        problems and understanding complex systems - my goal is to do
+        high-quality digital experiences and love what I do. I'm passionate
+        about solving problems and understanding complex systems - my goal is do
         interesting things that matter.
       </TopAboutSection>
       <AboutSection></AboutSection>
@@ -125,42 +117,25 @@ const About = () => (
       </ProfileContainer>
       <AboutSection>
         My greatest strength is my never-ending desire to improve, both as a
-        human being and a developer. I believe in having a{' '}
-        <InlineExternalLink
-          target="_blank"
-          href="https://www.youtube.com/watch?v=_X0mgOOSpLU&feature=emb_title"
-          rel="noopener noreferrer"
-        >
-          growth mindset
-        </InlineExternalLink>
-        , replacing the belief <ItalicSpan>“I’m bad at X”</ItalicSpan> with{' '}
-        <ItalicSpan>“I haven’t learned about X yet”</ItalicSpan>. I'm
-        enthusiastic, equal parts collaborative and autonomous, and great at
-        building rapport with others.
+        human being and a developer. I believe in having a growth mindset ,
+        replacing the belief <ItalicSpan>“I’m bad at X”</ItalicSpan> with{' '}
+        <ItalicSpan>“I haven’t learned about X yet”</ItalicSpan>. I'm curious
+        and enthusiastic, quick at picking up new skills, and equal parts
+        collaborative and autonomous.
       </AboutSection>
       <AboutSection>
-        I'm an incessantly curious person. I create because it's fun, constantly
-        seek out new knowledge, and read <ItalicSpan>a lot</ItalicSpan>. I don't
-        like to sit still and have{' '}
-        <span style={{ textDecoration: 'line-through' }}>dreams</span> plans to
-        live all over the globe - I like to expose myself to ways of thinking
-        and living that challenge my current understanding of the world.
+        Before learning to code, I worked as a wilderness therapy guide in
+        Colorado and a foreign English teacher in Thailand. These experiences
+        instilled skills like resilience, self-sufficiency, communication, and
+        discipline, all which have shaped me into the person I am today.
       </AboutSection>
       <AboutSection>
-        I believe in an interdisciplinary approach to life and work. Before
-        learning to code, I worked as a wilderness therapy guide in Colorado and
-        a foreign English teacher in Thailand. These experiences instilled in me
-        skills like resilience, self-sufficiency, communication, and discipline,
-        all which have shaped me into the exceptional leader, teammate, and
-        developer I am today.
+        I'm also a hardcore outdoor adventure enthusiast, a health/nutrition
+        geek, and a very friendly people person.
       </AboutSection>
       <AboutSection>
-        I'm also a hardcore outdoor adventure enthusiast, health nerd, amateur
-        chef, serial optimist, and ridiculously friendly people person.
-      </AboutSection>
-      <AboutSection>
-        If you'd like to connect, feel free to get in touch through email,
-        Twitter or LinkedIn.
+        If you'd like to connect, reach out through email, Twitter or LinkedIn.
+        I'd love to hear from you.
       </AboutSection>
       <ContactContainer>
         <SocialLinkContainer>
