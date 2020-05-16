@@ -11,8 +11,7 @@ const PageContainer = styled.div`
 `
 
 const Header = styled.h1`
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin: 40px auto;
 `
 
 const Description = styled.p`
