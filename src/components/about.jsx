@@ -12,7 +12,6 @@ const AboutContainer = styled.div`
 const LeftIntro = styled.h1`
   text-align: left;
   font-size: 2.5em;
-  font-family: Optima, Avenir, sans-serif;
   padding: 40px 20px 20px 20px;
 `
 
@@ -65,7 +64,6 @@ const SocialLinkContainer = styled.p`
 
 const SocialLink = styled.a`
   font-size: 2.2em;
-  font-family: Optima, Avenir, sans-serif;
   font-weight: bold;
   color: black;
   @media (max-width: 768px) {
@@ -119,10 +117,6 @@ const About = () => (
         Colorado and a foreign English teacher in Thailand. These experiences
         instilled skills like resilience, self-sufficiency, communication, and
         discipline, all which have shaped me into the person I am today.
-      </AboutSection>
-      <AboutSection>
-        I'm also a hardcore outdoor adventure enthusiast, a health/nutrition
-        geek, and a very friendly people person.
       </AboutSection>
       <AboutSection>
         If you'd like to connect, reach out through email, Twitter or LinkedIn.

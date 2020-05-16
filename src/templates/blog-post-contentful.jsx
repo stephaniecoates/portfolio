@@ -11,17 +11,13 @@ const PageContainer = styled.div`
   padding: 0px 20px;
 `
 
-const Title = styled.h1`
-  font-family: Optima, Avenir, sans-serif;
-`
-
 const Subhead = styled.div`
-  color: grey;
+  color: #505050;
   font-size: 0.9em;
 `
 
 const Content = styled.p`
-  line-height: 1.8em;
+  line-height: 1.9em;
   font-size: 1.1em;
 `
 
@@ -61,7 +57,7 @@ const BlogPostContentfulTemplate = ({ data, pageContext }) => {
           lang="en"
           author="Stephanie Coates"
         />
-        <Title>{contentfulPost.title}</Title>
+        <h1>{contentfulPost.title}</h1>
         <Subhead>by Stephanie Coates</Subhead>
         <Content
           dangerouslySetInnerHTML={{

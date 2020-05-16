@@ -12,7 +12,6 @@ const PageContainer = styled.div`
 
 const Header = styled.h1`
   margin-top: 60px;
-  font-family: Optima, Avenir, sans-serif;
   margin-bottom: 40px;
 `
 
@@ -22,7 +21,6 @@ const Description = styled.p`
 
 const Subhead = styled.p`
   font-weight: bold;
-  font-family: Optima, Avenir, sans-serif;
   margin: 30px 0px 20px 0px;
   font-size: 1.3em;
 `
