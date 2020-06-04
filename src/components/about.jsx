@@ -106,7 +106,7 @@ const About = () => (
       </ProfileContainer>
       <AboutSection>
         My greatest strength is my never-ending desire to improve, both as a
-        human being and a developer. I believe in having a growth mindset ,
+        human being and a developer. I believe in having a growth mindset,
         replacing the belief <ItalicSpan>“I’m bad at X”</ItalicSpan> with{' '}
         <ItalicSpan>“I haven’t learned about X yet”</ItalicSpan>. I'm curious
         and enthusiastic, quick at picking up new skills, and equal parts
