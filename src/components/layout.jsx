@@ -88,15 +88,6 @@ const Footer = () => (
     >
       Contentful
     </InlineFooterLink>
-    . Deployed on{' '}
-    <InlineFooterLink
-      target="_blank"
-      rel="noopener noreferrer"
-      href="https://www.netlify.com/"
-    >
-      Netlify
-    </InlineFooterLink>
-    .
   </FooterContainer>
 )
 
